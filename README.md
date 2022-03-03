@@ -94,7 +94,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ## Ejercicios
 
 Estos son los ejercicios que puedes hacer después de la clase.
-Recuerda subir tu branch en tu repo como clase-2
+Recuerda subir tu branch en tu repo como clase-3
 
 1. Aplica estilos a tu tarjeta de comercio.
 2. Aplica un onClick para que cuándo hagas click en un botón, una alerta salga en el browser.
