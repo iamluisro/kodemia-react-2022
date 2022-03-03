@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Estilos, SASS, e Intro a Eventos (Event Handlers)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En esta clase vamos a ver las diferentes maneras de darle estilos a nuestra app de React. Luego nos enfocaremos en SASS. Y por último veremos sus primeras interacciones con eventos de HTML utilizados dentro de React.
 
-## Available Scripts
+## Maneras de dar estilos a tu aplicación de React
 
-In the project directory, you can run:
+1. ¡CSS normal como ya saben!
+2. Pre-processador de CSS (Less, SASS, Stylus)
+3. CSS-in-JS (Emotion, styled components)
 
-### `npm start`
+No hay una manera errónea, sin embargo cada una tiene diferentes pros y cons.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">[POLL] If you:<br><br>⚛️ had to build a greenfield React app today<br>⚡ needed to get it done quickly<br>🛠 care about the longterm maintainability of the app<br>🚫 can&#39;t just use an off-the-shelf component library<br><br>Which tool would you choose to style the app?</p>&mdash; Kent C. Dodds 💿 (@kentcdodds) <a href="https://twitter.com/kentcdodds/status/1224900215523512320?ref_src=twsrc%5Etfw">February 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- https://thecodest.co/blog/why-should-you-use-scss-instead-of-styled-components/
+- https://blog.logrocket.com/moving-from-scss-to-styled-components-advantages-and-caveats/
 
-### `npm test`
+De nuevo: No hay una manera correcta. Lo más importante es conocer las maneras más conocidas y poder adaptarse a las necesidades del proyecto y del equipo en el que se encuentran actualmente.
+
+## SASS en React
+
+Con Create React App (CRA), ¡súper sencillo!
+
+`npm i sass`
+
+Y solo cambias tus archivos .css a .scss y ¡listo!
+
+Si no estás usando CRA, lo más probable es que necesites instalar dependencias adicionales y a través de webpack: https://webpack.js.org/loaders/sass-loader/
+
+## Estructura de Archivos
+
+Dos maneras principales
+
+1. Carpeta de cada componente con su archivo JavaSript y su archivo de SCSS. Y una carpeta de estilos con archivos globales de scss.
+   /src
+   • ———— /components
+   • |———— /Component1
+   • |———— component1.js
+   • |———— component1.scss
+   • |———— index.js
+
+/src
+• ———— /styles
+• |———— \_animations.scss
+• |———— \_functions.scss
+• |———— \_global.scss
+• |———— \_mixins.scss
+• |———— \_typography.scss
+• |———— \_variables.scss
+
+2. Todos los archivos de estilos en la carpeta de styles
+   /src
+   • ———— /styles
+   • |———— component1.scss
+   • |———— componente2.scss
+   • |———— componente3.scss
+   • |———— \_functions.scss
+   • |———— \_global.scss
+   • |———— \_mixins.scss
+   • |———— \_typography.scss
+   • |———— \_variables.scss
+
+## Intro a Eventos (Event Handlers)
+
+Vamos a ver estos tres primeros eventos:
+
+1. onclick
+2. onsubmit
+3. onchange
+
+JavaScript:
+
+1. <button onclick="myFunction()">Click me</button>
+2. <form onsubmit="myFunction()">
+     Enter name: <input type="text">
+     <input type="submit">
+   </form>
+3. <select onchange="myFunction()">
+
+React:
+
+1. <button onClick="myFunction()">Click me</button>
+2. <form onSubmit="myFunction()">
+     Enter name: <input type="text">
+     <input type="submit">
+   </form>
+3. <select onChange="myFunction()">
+
+La razón es que cada palabra está reservada en JavaScript. Así que siendo una librería de React, esta era la mejor manera de no sobreescribir o crear conflictos.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Ejercicios
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Estos son los ejercicios que puedes hacer después de la clase.
+Recuerda subir tu branch en tu repo como clase-2
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Aplica estilos a tu tarjeta de comercio.
+2. Aplica un onClick para que cuándo hagas click en un botón, una alerta salga en el browser.
+3. Agrega un imagen a la tarjeta intentando seguir estas instrucciones: https://create-react-app.dev/docs/adding-images-fonts-and-files
