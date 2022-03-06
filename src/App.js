@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import Card from './components/Card';
 import './App.css';
-import Form from './components/OnChange';
 
 function App() {
 	return (
@@ -13,7 +12,6 @@ function App() {
 				<Card />
 				<Card />
 			</div>
-			<Form />
 		</div>
 	);
 }

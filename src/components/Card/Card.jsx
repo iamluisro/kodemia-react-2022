@@ -1,22 +1,29 @@
 import React from 'react';
-import './Card.scss'
+import { Card, Button } from 'react-bootstrap';
+import './Card.scss';
 
-function Card() {
+// 1. agreguemos un botón para sumar la cantidad que queremos comprar
+// 2. agreguemos un corazón de ícono para poder guardar como favorito
+// 3. agreguemos un estados para llevar la cuenta
+// 4. agreguemos un estados para saber si un usuario agrego el producto como fav
+
+function CardComponent() {
 	return (
-		<div className='Card' >
-			<img src='...'  alt='...' />
-			<div >
-				<h5 >Card title</h5>
-				<p >
+		<Card style={{ width: '18rem' }}>
+			<Card.Img
+				variant='top'
+				src='https://getuikit.com/v2/docs/images/placeholder_200x100.svg'
+			/>
+			<Card.Body>
+				<Card.Title>Card Title</Card.Title>
+				<Card.Text>
 					Some quick example text to build on the card title and make up the
 					bulk of the card's content.
-				</p>
-				<a href='#' >
-					Go somewhere
-				</a>
-			</div>
-		</div>
+				</Card.Text>
+				<Button variant='primary'>Go somewhere</Button>
+			</Card.Body>
+		</Card>
 	);
 }
 
-export default Card;
+export default CardComponent;
