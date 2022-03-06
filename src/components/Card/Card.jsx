@@ -7,7 +7,9 @@ import './Card.scss';
 // 3. agreguemos un estados para llevar la cuenta
 // 4. agreguemos un estados para saber si un usuario agrego el producto como fav
 
-function CardComponent() {
+function CardComponent(props) {
+	console.log('🚀 ~ file: Card.jsx ~ line 11 ~ CardComponent ~ props', props);
+	const { addToCart } = props;
 	return (
 		<Card style={{ width: '18rem' }}>
 			<Card.Img
@@ -20,7 +22,9 @@ function CardComponent() {
 					Some quick example text to build on the card title and make up the
 					bulk of the card's content.
 				</Card.Text>
-				<Button variant='primary'>Go somewhere</Button>
+				<Button variant='primary' onClick={addToCart}>
+					Add to cart
+				</Button>
 			</Card.Body>
 		</Card>
 	);
