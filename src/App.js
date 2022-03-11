@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import Card from './components/Card';
-import './App.css';
+import './App.scss';
 import Form from './components/OnChange';
 
 function App() {
