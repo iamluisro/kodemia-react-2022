@@ -1,13 +1,16 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './Card.scss';
-
-// 1. agreguemos un botón para sumar la cantidad que queremos comprar
-// 2. agreguemos un corazón de ícono para poder guardar como favorito
-// 3. agreguemos un estados para llevar la cuenta
-// 4. agreguemos un estados para saber si un usuario agrego el producto como fav
+import Badge from 'react-bootstrap/Badge';
+// El objetivo es saber si un comprador agregó el producto a sus favorite
 
 function CardComponent() {
+	const [addedToFav, setAddedToFav] = React.useState(false)
+
+	function addToFav() {
+		console.log('add to fav');
+		setAddedToFav(true)
+	}
 	return (
 		<Card style={{ width: '18rem' }}>
 			<Card.Img
@@ -20,7 +23,14 @@ function CardComponent() {
 					Some quick example text to build on the card title and make up the
 					bulk of the card's content.
 				</Card.Text>
-				<Button variant='primary'>Go somewhere</Button>
+				<Button variant='primary' onClick={addToFav}>
+					Agregar a favs
+				</Button>
+				{addedToFav && (
+					<Badge pill bg='primary'>
+					Carrito 4
+					</Badge>
+				)}
 			</Card.Body>
 		</Card>
 	);

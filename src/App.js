@@ -1,16 +1,16 @@
 import logo from './logo.svg';
 import Card from './components/Card';
 import './App.css';
-
+import Form from './components/Form'
 function App() {
 	return (
 		<div>
-			<header>Clase 2 - React Components and Compositions</header>
+			<header>Clase 4 </header>
 			<div className='Card--Container'>
+				{/* <Card name='Luis' />
 				<Card name='Luis' />
-				<Card />
-				<Card />
-				<Card />
+				<Card name='Luis' /> */}
+			<Form />
 			</div>
 		</div>
 	);
