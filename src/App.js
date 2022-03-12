@@ -1,17 +1,10 @@
-import logo from './logo.svg';
-import Card from './components/Card';
 import './App.css';
-import Form from './components/Form'
+import Home from './views/index'
+
 function App() {
 	return (
 		<div>
-			<header>Clase 4 </header>
-			<div className='Card--Container'>
-				{/* <Card name='Luis' />
-				<Card name='Luis' />
-				<Card name='Luis' /> */}
-			<Form />
-			</div>
+			<Home />
 		</div>
 	);
 }

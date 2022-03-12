@@ -12,7 +12,7 @@ function CardComponent() {
 		setAddedToFav(true)
 	}
 	return (
-		<Card style={{ width: '18rem' }}>
+		<Card style={{ width: '18rem', marginRight: '2rem' }}>
 			<Card.Img
 				variant='top'
 				src='https://getuikit.com/v2/docs/images/placeholder_200x100.svg'
