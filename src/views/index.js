@@ -6,13 +6,18 @@ import ProductSection from '../components/ProductSection';
 import Container from 'react-bootstrap/Container';
 
 function Home() {
+    const [carrito, setCarrito] = React.useState(0)
+
+    function addToCart() {
+        setCarrito(carrito + 2)
+    }
     return (
         <div id='App'>
-            <NavBar />
+            <NavBar carrito={carrito} />
             <Container>
                 <GreetingSection />
                 <CategoriesSection />
-                <ProductSection />
+                <ProductSection addToCart={addToCart} />
             </Container>
         </div>
     );

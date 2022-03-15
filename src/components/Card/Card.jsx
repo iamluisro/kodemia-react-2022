@@ -4,7 +4,8 @@ import './Card.scss';
 import Badge from 'react-bootstrap/Badge';
 // El objetivo es saber si un comprador agregó el producto a sus favorite
 
-function CardComponent() {
+function CardComponent(props) {
+	const {addToCart} = props
 	const [addedToFav, setAddedToFav] = React.useState(false)
 
 	function addToFav() {
@@ -23,8 +24,8 @@ function CardComponent() {
 					Some quick example text to build on the card title and make up the
 					bulk of the card's content.
 				</Card.Text>
-				<Button variant='primary' onClick={addToFav}>
-					Agregar a favs
+				<Button variant='primary' onClick={addToCart}>
+					Agregar a carrito
 				</Button>
 				{addedToFav && (
 					<Badge pill bg='primary'>
