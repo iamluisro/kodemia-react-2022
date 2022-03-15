@@ -1,14 +1,19 @@
 import React from 'react';
 import Badge from 'react-bootstrap/Badge';
+import categories from '../../data/categories.json';
 
 function CategoriesSection() {
+	console.log('🚀 ~ file: index.js ~ line 4 ~ categories', categories);
 	return (
-        <div style={{ margin: '2rem 0'}}>
+		<div style={{ margin: '2rem 0' }}>
 			<h4>Categories</h4>
-			<Badge pill className="mr-3">Men's clothing</Badge>
-			<Badge pill className="mr-3">Jewlery</Badge>
-			<Badge pill className="mr-3">Electronics</Badge>
-			<Badge pill className="mr-3">Women's Clothing</Badge>
+			{categories.map((category) => {
+				return (
+					<Badge key={category} pill className='mr-3'>
+						{category}
+					</Badge>
+				);
+			})}
 		</div>
 	);
 }
